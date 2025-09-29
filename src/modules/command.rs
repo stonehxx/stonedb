@@ -35,6 +35,11 @@ pub enum DataType {
     Table(String),
     Tuple(String),
     Tenser(String),
+    None,
+    NaN,
+    Fn(String),
+    Date(String),
+    Complex(String),
 }
 
 #[derive(Debug)]
@@ -49,4 +54,26 @@ pub enum NewType {
     Table(Option<Vec<String>>, Option<Vec<String>>),
     Tuple(Option<String>),
     Tenser(String),
+    Date(String),
+    Enum(String),
+    Complex(String),
+    Chars(String),
+}
+
+#[derive(Debug)]
+pub enum CallType {
+    Push(),
+    Pop(),
+    Insert(),
+    Get(),
+    First(),
+    Last(),
+    Len(),
+    IsEmpty(),
+    Remove(),
+    Clear(),
+    Retain(),
+    Truncate(),
+    Contains(),
+    Dedup(),
 }
