@@ -34,6 +34,7 @@ pub enum DataType {
     Number(String),
     Table(String),
     Tuple(String),
+    Tenser(String),
 }
 
 #[derive(Debug)]
@@ -47,4 +48,5 @@ pub enum NewType {
     Number(Option<String>),
     Table(Option<Vec<String>>, Option<Vec<String>>),
     Tuple(Option<String>),
+    Tenser(String),
 }
