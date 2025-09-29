@@ -1,0 +1,4 @@
+command:
+	get(path or command()) -> data or error
+	set(path,value or get()) -> () or error
+	command(path,set) -> () or error

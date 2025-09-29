@@ -1,0 +1,27 @@
+before:
+"""
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <strong>hello,world!</strong>
+</body>
+</html>
+"""
+after:
+"""
+html lang="en":
+	head:
+		meta charset="UTF-8"
+		meta name="viewport" content="width=device-width, initial-scale=1.0"
+		title:
+			Document
+	body:
+		p:
+			<strong>hello,world!</strong>
+"""
+it can build to html

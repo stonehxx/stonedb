@@ -1,0 +1,96 @@
+array:
+	example = array
+	example = array<usize>
+	example.push("!")
+	example.pop()
+	example.insert(1," ")
+	example.get(..)
+	example.first()
+	example.last()
+	example.len()
+	example.is_empty()
+	example.remove(0)
+	example.clear()
+	example.retain(|x| true)
+	example.truncate(len)	
+	examples.contains()
+	example.dedup()
+	example[0][..,..][#xxx](|x| sth) = xxx
+	example[example[fn]]
+object:
+	example = object
+	example = object<usize,String>
+	example.push("!")
+	example.pop()
+	example.insert(1," ")
+	example.get(..)
+	example.first()
+	example.last()
+	example.len()
+	example.is_empty()
+	example.remove(0)
+	example.clear()
+	example.retain(|x| true)
+	example.truncate(len)	
+	examples.contains()
+	example.dedup()
+	example[num or str or [..],[#xxx]](|x| sth) = xxx
+table:
+	example = table<usize,String>("name","name1")
+	example.push("!")
+	example.pop()
+	example.insert(1," ")
+	example.get(..)
+	example.first()
+	example.last()
+	example.len()
+	example.is_empty()
+	example.remove(0)
+	example.clear()
+	example.retain(|x| true)
+	example.truncate(len)	
+	examples.contains()
+	example.dedup()
+	example(|x| x["name"] == "stone")["passwd"] = xxx
+link:
+	example = link<file>
+	example = link<dir>
+	example = link<example["s"]>
+	example
+	example[1] = xxx no str
+	example[example[fn]]
+json:
+	.json() -> Json
+	Json.string() -> String
+	Json.bytes() -> Bytes
+	String.bytes() -> Bytes
+bson:
+	.bson() -> Bson
+	Bson.bytes() -> Bytes
+String:
+	.String()
+	.bytes() -> Bytes
+str:
+	...
+float:
+	...
+int:
+	...
+complex:
+	...
+tenser:
+	...
+date:
+	...
+bool:
+	...
+None:
+	...
+fn:
+	example = (|x| ..)
+	
+Nan:
+	...
+enum：映射
+.shaxxx()
+.bash64()
