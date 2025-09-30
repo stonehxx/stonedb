@@ -1,3 +1,7 @@
+use super::command::Command;
+use super::path::PathType;
+use super::command::Value;
+
 pub fn read_line(input: impl AsRef<str>) -> Result<Command, String> {
     let input = input.as_ref();
     let input = equal_split(input);
@@ -138,10 +142,10 @@ fn read_path(path: impl AsRef<str>) -> Result<Vec<PathType>, String> {
     Ok(result)
 }
 
-fn read_data(data: impl AsRef<str>) -> Result<Set, String> {
+fn read_data(data: impl AsRef<str>) -> Result<Value, String> {
     let data = data.as_ref();
 
-    Ok(Set::PathType(read_path(data)?))
+    Ok(Value::PathType(read_path(data)?))
 }
 
 fn read_new(data: &str) {}
@@ -191,5 +195,3 @@ fn equal_split(input: impl AsRef<str>) -> Vec<String> {
     }
     result
 }
-
-use super::database::*;
