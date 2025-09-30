@@ -4,6 +4,7 @@ pub enum Error {
     DatabaseAlreadyExists,
     DatabaseInUse,
     IoError(std::io::Error),
+    Other(String)
 }
 
 impl From<std::io::Error> for Error {
