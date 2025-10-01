@@ -11,8 +11,8 @@ pub enum DataType {
     Tuple(String),
     Tenser(String),
     None,
-    NaN,
     Fn(String),
     Date(String),
     Complex(String),
+    Chars(String),
 }

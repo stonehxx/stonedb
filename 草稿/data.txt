@@ -1,0 +1,42 @@
+database:
+    lock -> lock database
+    create -> new
+    delete -> delete list
+    X.DATA -> data
+    X.INDEX -> index
+    config -> config
+    ./File -> workspace
+
+config -> 
+        [] = 100
+        {} = 100
+        () = 100
+
+database -> [] , [x]
+    x.index -> x-m.data -> data
+                        -> link -> x.data
+
+x.index -> array + 固定?,max_size,all.size,(a.size,a.data),(b.size,b.data)...
+x.data -> n.data,
+                  固定 -> size,data0,data1...
+                非固定 -> (link?,size,data0),(link?,size,data1)...
+(link?,size,data0)
+                link -> x.index -> jmp C
+                     -> file
+                     -> dir/file
+              unlink -> size,data -> jmp S
+
+    String => size,data
+    Array => link(size,data)
+    Object => link(size,size,data,data)
+    Float => (size,data)
+    Bytes => (size,data)
+    Link => type,xxx
+    Number => (size,data)
+    Table => index(xxx)
+    Tuple => index(size,size|,data,data)
+    Tenser(String),
+    None => 默认
+    Fn(String) => (size,data)
+    Date(String) => data
+    Complex(String) => size,size,data,data

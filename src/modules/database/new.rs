@@ -1,5 +1,6 @@
 #[derive(Debug, Clone)]
 pub enum NewType {
+    None,
     String(Option<String>),
     Array(Option<String>),
     Object(Option<(String, String)>),
@@ -14,4 +15,5 @@ pub enum NewType {
     Enum(String),
     Complex(String),
     Chars(String),
+    FN(String)
 }
