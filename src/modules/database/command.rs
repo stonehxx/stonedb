@@ -39,11 +39,11 @@ impl Command {
 
 fn get(path: Vec<PathType>) -> Result<DataType, Error> {
     if path.is_empty() {
-        return Err(Error::PathTypeError(PathTypeError::EmptyPath));
+        return Err(Error::PathError(PathTypeError::EmptyPath));
     }
     let database_path = match &path[0] {
         PathType::Database(db) => PathBuf::from(db),
-        _ => return Err(Error::PathTypeError(PathTypeError::FirstElementNotDatabase)),
+        _ => return Err(Error::PathError(PathTypeError::FirstElementNotDatabase)),
     };
     if !database_path.is_dir() {
         return Err(Error::DatabaseNotFound);
@@ -75,11 +75,11 @@ fn data(path: Vec<PathType>, data: DataType) -> Result<DataType, Error> {
 
 fn from(path: Vec<PathType>, from: Vec<PathType>) -> Result<DataType, Error> {
     if path.is_empty() {
-        return Err(Error::PathTypeError(PathTypeError::EmptyPath));
+        return Err(Error::PathError(PathTypeError::EmptyPath));
     }
     let database_path = match &path[0] {
         PathType::Database(db) => PathBuf::from(db),
-        _ => return Err(Error::PathTypeError(PathTypeError::FirstElementNotDatabase)),
+        _ => return Err(Error::PathError(PathTypeError::FirstElementNotDatabase)),
     };
     if !database_path.is_dir() {
         return Err(Error::DatabaseNotFound);

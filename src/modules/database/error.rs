@@ -3,7 +3,7 @@ pub enum Error {
     DatabaseNotFound,
     DatabaseAlreadyExists,
     DatabaseInUse,
-    PathTypeError(PathTypeError),
+    PathError(PathTypeError),
     IoError(std::io::Error),
     Other(String),
 }
