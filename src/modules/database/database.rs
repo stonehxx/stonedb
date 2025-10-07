@@ -1,9 +1,10 @@
-use super::error::Error;
 use std::{
     fs::{self, File},
     io::Write,
     path::Path,
 };
+
+use super::path::PathTypeError;
 
 pub fn create(name: impl AsRef<Path>) -> Result<(), Error> {
     let path = name.as_ref();
@@ -61,4 +62,19 @@ pub fn init() -> Result<(), Error> {
     create("system")?;
     todo!();
     Ok(())
+}
+
+#[derive(Debug)]
+pub enum Error {
+    DatabaseNotFound,
+    DatabaseAlreadyExists,
+    DatabaseInUse,
+    Path(PathTypeError),
+    IoError(std::io::Error),
+}
+
+impl From<std::io::Error> for Error {
+    fn from(e: std::io::Error) -> Self {
+        Error::IoError(e)
+    }
 }

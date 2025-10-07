@@ -1,11 +1,22 @@
+use std::path::PathBuf;
+
 #[derive(Debug, Clone)]
-pub enum PathType {
+pub struct PathType {
+    database: PathBuf,
+    paths: Vec<PathTypes>,
+}
+
+#[derive(Debug, Clone)]
+pub enum PathTypes {
     Fn(String),
-    Select(String),
-    Num(String),
-    //Call(CallType, Vec<String>),
-    Call(String, String),
-    Field(String),
-    Database(String),
-    Object(String),
+    Regex(String),
+    Range(Option<i64>, Option<i64>),
+    String(String),
+    Num(u64),
+}
+
+#[derive(Debug)]
+pub enum PathTypeError {
+    EmptyPath,
+    FirstElementNotDatabase,
 }

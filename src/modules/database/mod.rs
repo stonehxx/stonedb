@@ -1,9 +1,7 @@
 mod call;
 mod command;
 mod data;
-mod error;
 mod link;
-mod new;
 mod path;
 mod function;
 mod translate;
