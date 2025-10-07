@@ -5,7 +5,6 @@ pub enum Error {
     DatabaseInUse,
     PathError(PathTypeError),
     IoError(std::io::Error),
-    Other(String),
 }
 
 #[derive(Debug)]
